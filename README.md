@@ -8,5 +8,6 @@ Then you have to create in your db the following source intern_tutor
 
 Then you can start the project by clicking on the run icon
 
+This is the link of our video : 
 
 This is the link of our web app :
