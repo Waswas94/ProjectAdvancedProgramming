@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users - TutorManagementApp</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+</head>
+<body>
+    <div class="container text-center">
+        <div>
+            <form th:action="@{/logout}"  method="post">
+                <p>
+                    Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+                </p>
+                <input type="submit" value="Sign Out" />
+            </form>
+        </div>
+        <div>
+            <h1>List of All Interns</h1>
+        </div>
+        <div>
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>User ID</th>
+                        <th>Promo</th>
+                        <th>E-mail</th>
+                        <th>First Name</th>
+                        <th>Phone number</th>
+                        <th>C.d.C</th>
+                        <th>Fiche Visite</th>
+                        <th>Fiche Eval Entr</th>
+                        <th>Rapport Rendu</th>
+                        <!--
+                        <th>Debut</th>
+                        <th>Fin</th>
+                        -->
+                        <th>Company</th>
+                        <th>Adresse</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="intern: ${listInterns}">
+                        <td th:text="${intern.id}">User ID</td>
+                        <td th:text="${intern.promo}">Promo</td>
+                        <td th:text="${intern.email}">Email</td>
+                        <td th:text="${intern.name}">First Name</td>
+                        <td th:text="${intern.phone}">Phone number</td>
+                        <td th:text="${intern.cdc}">C.d.C</td>
+                        <td th:text="${intern.ficheVisite}">Fiche Visite</td>
+                        <td th:text="${intern.ficheEvalEntr}">Fiche Eval Entr</td>
+                        <td th:text="${intern.rapportRendu}">Rapport Rendu/td>
+                        <!--
+                        <td th:date="${intern.debut}">Debut</td>
+                        <td th:date="${intern.fin}">Company</td>
+                        -->
+                        <td th:text="${intern.company}">Company</td>
+                        <td th:text="${intern.adresse}">Adresse</td>
+                        <td th="@{/api/interns/${intern.id}}">Delete</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <a th:href="@{/api/interns/create_intern}" class="btn btn-primary">Create Intern</a>
+        </div>
+
+
+    </div>
+</body>
+</html>

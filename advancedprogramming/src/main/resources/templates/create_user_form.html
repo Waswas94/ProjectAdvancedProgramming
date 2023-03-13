@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create intern - TutorManagementApp</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+</head>
+<body>
+    <div class="container text-center">
+        <div>
+            <h1>Intern Registration</h1>
+        </div>
+        <div>
+            <form th:action="@{/api/interns/process_intern_registration}" method="post"
+                  style="max-width: 600px; margin: 0 auto;"
+                  th:object="${intern}"
+            >
+                <div class="m-3">
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Name</label>
+                        <div class="col-8">
+                            <input type="text" class="form-control" th:field="*{name}" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">E-mail</label>
+                        <div class="col-8">
+                            <input type="email" class="form-control" th:field="*{email}" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Promo</label>
+                        <div class="col-8">
+                            <input type="text" class="form-control" th:field="*{promo}" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Phone number</label>
+                        <div class="col-8">
+                            <input type="text" class="form-control" th:field="*{phone}" required/>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Company</label>
+                        <div class="col-8">
+                            <input type="text" class="form-control" th:field="*{company}" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Adresse</label>
+                        <div class="col-8">
+                            <input type="text" class="form-control" th:field="*{adresse}" required/>
+                        </div>
+                    </div>
+<!--
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Date of Start</label>
+                        <div class="col-8">
+                            <input type="date" class="form-control" th:field="*{debut}" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Date of End</label>
+                        <div class="col-8">
+                            <input type="date" class="form-control" th:field="*{fin}" required/>
+                        </div>
+                    </div>
+-->
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">C.d.C</label>
+                        <div class="col-8">
+                            <input type="text" class="form-control" th:field="*{cdc}" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Fiche Visite</label>
+                        <div class="col-8">
+                            <input type="text" class="form-control" th:field="*{ficheVisite}" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Fiche Eval Entr</label>
+                        <div class="col-8">
+                            <input type="text" class="form-control" th:field="*{ficheEvalEntr}" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-4">Rapport Rendu</label>
+                        <div class="col-8">
+                            <input type="text" class="form-control" th:field="*{rapportRendu}" required/>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary">Create intern</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+</html>
